@@ -1,0 +1,2294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Siddhartha Chaulagain | Portfolio</title>
+
+    <meta name="description"
+          content="Portfolio of Siddhartha Chaulagain, a Commerce and Management student from Siraha, Nepal.">
+
+    <style>
+
+        /* ========================================
+           GLOBAL
+        ======================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --background: #0d0d0d;
+            --background-soft: #111111;
+            --card: #151515;
+            --white: #f5f5f5;
+            --gray: #999999;
+            --dark-gray: #555555;
+            --border: rgba(255,255,255,0.12);
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--background);
+            color: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+
+        /* ========================================
+           BACKGROUND EFFECT
+        ======================================== */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            left: -250px;
+            top: 10%;
+            background: rgba(255,255,255,0.025);
+            border-radius: 50%;
+            filter: blur(120px);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            right: -250px;
+            bottom: 5%;
+            background: rgba(255,255,255,0.025);
+            border-radius: 50%;
+            filter: blur(120px);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+
+        /* ========================================
+           NAVIGATION
+        ======================================== */
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+
+            padding: 18px 6%;
+
+            background: rgba(13,13,13,0.80);
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            max-width: 1250px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+
+        .logo span {
+            color: #666;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #999;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        .menu {
+            display: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+
+        /* ========================================
+           COMMON SECTION
+        ======================================== */
+
+        section {
+            padding: 120px 6%;
+        }
+
+        .container {
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        .section-number {
+            color: #777;
+
+            font-size: 12px;
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: clamp(40px, 6vw, 75px);
+
+            line-height: 0.98;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 35px;
+        }
+
+        .section-description {
+            max-width: 760px;
+
+            color: var(--gray);
+
+            margin-bottom: 55px;
+
+            font-size: 16px;
+        }
+
+
+        /* ========================================
+           HERO
+        ======================================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 150px;
+        }
+
+        .hero-inner {
+            width: 100%;
+            max-width: 1250px;
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1.3fr 0.7fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .tag {
+            display: inline-block;
+
+            padding: 8px 16px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 50px;
+
+            color: #aaa;
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 25px;
+
+            background: rgba(255,255,255,0.03);
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 8vw, 110px);
+
+            line-height: 0.88;
+
+            letter-spacing: -6px;
+
+            margin-bottom: 35px;
+        }
+
+        .hero h1 span {
+            color: #555;
+        }
+
+        .hero-description {
+            max-width: 680px;
+
+            color: #999;
+
+            font-size: 17px;
+
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+
+            gap: 14px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 14px 25px;
+
+            border: 1px solid white;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        .btn.primary {
+            background: white;
+            color: black;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+        }
+
+
+        /* ========================================
+           PROFILE PHOTO
+        ======================================== */
+
+        .photo-wrapper {
+            display: flex;
+
+            justify-content: center;
+
+            position: relative;
+        }
+
+        .photo-card {
+            width: 350px;
+            height: 450px;
+
+            padding: 12px;
+
+            border: 1px solid var(--border);
+
+            background: linear-gradient(
+                145deg,
+                #191919,
+                #080808
+            );
+
+            transform: rotate(2deg);
+
+            transition: 0.5s;
+
+            position: relative;
+        }
+
+        .photo-card:hover {
+            transform: rotate(0deg) translateY(-10px);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: none;
+            transition: transform 0.5s ease;
+        }
+
+        .photo-label {
+            position: absolute;
+
+            bottom: -20px;
+            left: -20px;
+
+            padding: 12px 18px;
+
+            background: white;
+
+            color: black;
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* ========================================
+           ABOUT
+        ======================================== */
+
+        .about {
+            background: var(--background-soft);
+        }
+
+        /*
+           LARGE ABOUT HEADING
+           Designed to match your reference image
+        */
+
+        .about .section-number {
+            margin-bottom: 28px;
+        }
+
+        .about .section-title {
+            font-size: clamp(48px, 7vw, 92px);
+
+            line-height: 0.95;
+
+            letter-spacing: -5px;
+
+            max-width: 1000px;
+
+            margin-bottom: 70px;
+        }
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1.3fr 0.7fr;
+
+            gap: 70px;
+        }
+
+        .about-text p {
+            color: #aaa;
+
+            margin-bottom: 20px;
+        }
+
+        .about-info {
+            padding: 35px;
+
+            border: 1px solid var(--border);
+
+            background: rgba(255,255,255,0.035);
+        }
+
+        .info {
+            padding: 20px 0;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .info:last-child {
+            border-bottom: none;
+        }
+
+        .info small {
+            display: block;
+
+            color: #666;
+
+            font-size: 10px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+        }
+
+        .info strong {
+            font-size: 18px;
+        }
+
+
+        /* ========================================
+           EDUCATION
+        ======================================== */
+
+        .timeline {
+            max-width: 900px;
+
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 8px;
+
+            top: 0;
+
+            bottom: 0;
+
+            width: 1px;
+
+            background: #333;
+        }
+
+        .timeline-item {
+            position: relative;
+
+            padding-left: 50px;
+
+            margin-bottom: 70px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+
+            left: 0;
+
+            top: 8px;
+
+            width: 17px;
+            height: 17px;
+
+            background: white;
+
+            border-radius: 50%;
+
+            border: 4px solid #0d0d0d;
+
+            box-shadow: 0 0 0 1px #555;
+        }
+
+        .timeline-item span {
+            color: #666;
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+        .timeline-item h3 {
+            font-size: 29px;
+
+            margin: 8px 0;
+        }
+
+        .timeline-item h4 {
+            color: #bbb;
+
+            font-weight: 500;
+
+            margin-bottom: 12px;
+        }
+
+        .timeline-item p {
+            color: #777;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* ========================================
+           INTERESTS
+        ======================================== */
+
+        .interests {
+            background: var(--background-soft);
+        }
+
+        .interest-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 16px;
+        }
+
+        .interest {
+            min-height: 150px;
+
+            padding: 30px;
+
+            border: 1px solid var(--border);
+
+            background: rgba(255,255,255,0.035);
+
+            transition: 0.35s;
+        }
+
+        .interest:hover {
+            transform: translateY(-8px);
+
+            border-color: #555;
+        }
+
+        .interest-number {
+            color: #555;
+
+            font-size: 12px;
+
+            margin-bottom: 25px;
+        }
+
+        .interest h3 {
+            font-size: 20px;
+        }
+
+
+        /* ========================================
+           SKILLS
+        ======================================== */
+
+        .skill-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 28px 60px;
+        }
+
+        .skill {
+            margin-bottom: 10px;
+        }
+
+        .skill-top {
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 10px;
+        }
+
+        .skill-top span:first-child {
+            font-size: 14px;
+        }
+
+        .skill-top span:last-child {
+            color: #666;
+
+            font-size: 12px;
+        }
+
+        .skill-bar {
+            height: 3px;
+
+            background: #222;
+
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+
+            width: 0;
+
+            background: white;
+
+            transition: width 1.5s ease;
+        }
+
+
+        /* ========================================
+           GOALS
+        ======================================== */
+
+        .goals {
+            background: var(--background-soft);
+        }
+
+        .goal-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+        }
+
+        .goal {
+            padding: 25px;
+
+            border: 1px solid var(--border);
+
+            color: #aaa;
+
+            background: rgba(255,255,255,0.025);
+        }
+
+        .goal strong {
+            color: white;
+
+            margin-right: 12px;
+        }
+
+
+        /* ========================================
+           STRENGTHS
+        ======================================== */
+
+        .strength-grid {
+            display: grid;
+
+            grid-template-columns: repeat(5,1fr);
+
+            gap: 18px;
+        }
+
+        .strength {
+            padding: 25px 0;
+
+            border-top: 1px solid #444;
+        }
+
+        .strength h3 {
+            font-size: 17px;
+
+            margin-bottom: 12px;
+        }
+
+        .strength p {
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        /* ========================================
+           VISION
+        ======================================== */
+
+        .vision {
+            padding: 70px;
+
+            border: 1px solid var(--border);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #191919,
+                    #090909
+                );
+        }
+
+        .vision-text {
+            max-width: 950px;
+
+            font-size: clamp(24px,3vw,38px);
+
+            line-height: 1.45;
+
+            color: #ddd;
+        }
+
+
+        /* ========================================
+           PERSONAL STATEMENT
+        ======================================== */
+
+        .statement {
+            text-align: center;
+        }
+
+        .quote {
+            max-width: 1000px;
+
+            margin: auto;
+
+            font-size: clamp(28px,4vw,48px);
+
+            line-height: 1.3;
+        }
+
+        .quote-author {
+            margin-top: 30px;
+
+            color: #666;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* ========================================
+           CONTACT
+        ======================================== */
+
+        .contact {
+            background: var(--background-soft);
+
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 800px;
+
+            margin: auto;
+        }
+
+        .contact-content p {
+            color: #777;
+
+            margin-bottom: 35px;
+        }
+
+        .socials {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+        .social {
+            padding: 12px 23px;
+
+            border: 1px solid var(--border);
+
+            font-size: 12px;
+
+            transition: 0.3s;
+        }
+
+        .social:hover {
+            background: white;
+
+            color: black;
+        }
+
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+
+        footer {
+            padding: 35px 6%;
+
+            border-top: 1px solid var(--border);
+
+            text-align: center;
+
+            color: #555;
+
+            font-size: 12px;
+        }
+
+
+        /* ========================================
+           ANIMATION
+        ======================================== */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(35px);
+
+            transition:
+                opacity .8s ease,
+                transform .8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* ========================================
+           RESPONSIVE TABLET
+        ======================================== */
+
+        @media(max-width:950px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-wrapper {
+                justify-content: flex-start;
+            }
+
+            .interest-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .strength-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        /* ========================================
+           RESPONSIVE MOBILE
+        ======================================== */
+
+        @media(max-width:600px) {
+
+            section {
+                padding: 85px 6%;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero h1 {
+                font-size: 58px;
+
+                letter-spacing: -4px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .photo-card {
+                width: 290px;
+
+                height: 380px;
+            }
+
+            .about .section-title {
+                font-size: 48px;
+
+                letter-spacing: -3px;
+
+                margin-bottom: 50px;
+            }
+
+            .interest-grid,
+            .goal-grid,
+            .skill-grid,
+            .strength-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vision {
+                padding: 35px 25px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .nav-links {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================
+     NAVIGATION
+======================================== -->
+
+<header class="navbar">
+
+    <div class="nav-inner">
+
+        <a href="#home" class="logo">
+            SC<span>.</span>
+        </a>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#interests">Interests</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#goals">Goals</a>
+            </li>
+
+            <li>
+                <a href="#vision">Vision</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+
+        <div class="menu" onclick="toggleMenu()">
+            ☰
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ========================================
+     HERO
+======================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-inner">
+
+
+        <div class="hero-content reveal">
+
+            <div class="tag">
+                Commerce & Management Student
+            </div>
+
+
+            <h1>
+
+                SIDDHARTHA<br>
+
+                <span>CHAULAGAIN</span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                A 19-year-old Commerce and Management student
+                from Siraha, Nepal, passionate about business,
+                management, finance, accounting, entrepreneurship
+                and continuous personal development.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="#about" class="btn primary">
+                    Explore Portfolio
+                </a>
+
+                <a href="#contact" class="btn">
+                    Let's Connect
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PROFILE PHOTO -->
+
+        <div class="photo-wrapper reveal">
+
+            <div class="photo-card">
+
+                <!--
+                    IMPORTANT:
+                    Put your photo in the same folder
+                    and name it:
+
+                    siddhartha.jpeg
+                -->
+
+                <img
+                    src="siddhartha.jpeg"
+                    alt="Siddhartha Chaulagain"
+                >
+
+                <div class="photo-label">
+                    SIDDHARTHA CHAULAGAIN
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     ABOUT ME
+======================================== -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+
+        <div class="section-number">
+            01 — ABOUT ME
+        </div>
+
+
+        <!-- EXACT LARGE STYLE -->
+
+        <h2 class="section-title">
+
+            Learning today.<br>
+
+            Building tomorrow.
+
+        </h2>
+
+
+        <div class="about-grid">
+
+
+            <div class="about-text reveal">
+
+                <p>
+
+                    I am Siddhartha Chaulagain, a 19-year-old
+                    student with an academic background in
+                    Commerce and Management.
+
+                </p>
+
+
+                <p>
+
+                    I am interested in understanding how
+                    businesses and organizations work,
+                    particularly in areas such as management,
+                    finance, accounting, entrepreneurship,
+                    and business development.
+
+                </p>
+
+
+                <p>
+
+                    I believe education is not only about
+                    achieving academic qualifications but also
+                    about developing practical knowledge,
+                    communication skills, leadership abilities,
+                    and a responsible mindset.
+
+                </p>
+
+
+                <p>
+
+                    I am motivated to continue learning and
+                    developing myself so that I can build a
+                    successful career in the field of business
+                    and management.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="about-info reveal">
+
+
+                <div class="info">
+
+                    <small>
+                        Name
+                    </small>
+
+                    <strong>
+                        Siddhartha Chaulagain
+                    </strong>
+
+                </div>
+
+
+                <div class="info">
+
+                    <small>
+                        Age
+                    </small>
+
+                    <strong>
+                        19 Years
+                    </strong>
+
+                </div>
+
+
+                <div class="info">
+
+                    <small>
+                        Field of Study
+                    </small>
+
+                    <strong>
+                        Commerce & Management
+                    </strong>
+
+                </div>
+
+
+                <div class="info">
+
+                    <small>
+                        Location
+                    </small>
+
+                    <strong>
+                        Siraha, Nepal
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     EDUCATION
+======================================== -->
+
+<section id="education">
+
+    <div class="container">
+
+
+        <div class="section-number">
+            02 — EDUCATION
+        </div>
+
+
+        <h2 class="section-title">
+            Academic Journey
+        </h2>
+
+
+        <p class="section-description">
+
+            My academic journey has helped me build a strong
+            foundation in education and develop a deeper interest
+            in Commerce and Management.
+
+        </p>
+
+
+
+        <div class="timeline">
+
+
+            <!-- GRADE 10 -->
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+
+                <span>
+                    Secondary Education — Grade 10
+                </span>
+
+
+                <h3>
+                    Grade 10- GPA:3.64
+                </h3>
+
+
+                <h4>
+                    Mithila Vidya Mandir School
+                </h4>
+
+
+                <p>
+                    Mirchaiya, Siraha-04, Nepal
+                </p>
+
+
+                <p>
+
+                    I completed my Grade 10 education at Mithila
+                    Vidya Mandir School, where I developed my
+                    basic academic foundation and gained knowledge
+                    across different subjects.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- GRADE 12 -->
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+
+                <span>
+                    Higher Secondary Education — Grade 12
+                </span>
+
+
+                <h3>
+                    Grade 12- GPA:3.61
+                </h3>
+
+s
+                <h4>
+                    Mount Everest S.S. College School
+                </h4>
+
+
+                <p>
+                    Golbazar, Siraha-04, Nepal
+                </p>
+
+
+                <p>
+
+                    I completed my Grade 12 education with a focus
+                    on Commerce and Management. During this stage,
+                    I developed a stronger interest in business,
+                    management, accounting, economics and related
+                    areas.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     INTERESTS
+======================================== -->
+
+<section class="interests" id="interests">
+
+    <div class="container">
+
+
+        <div class="section-number">
+            03 — INTERESTS
+        </div>
+
+
+        <h2 class="section-title">
+            Areas I Explore
+        </h2>
+
+
+        <p class="section-description">
+
+            My major areas of interest are focused on business,
+            management, finance, communication and
+            entrepreneurship.
+
+        </p>
+
+
+
+        <div class="interest-grid">
+
+
+            <div class="interest reveal">
+
+                <div class="interest-number">
+                    01
+                </div>
+
+                <h3>
+                    Business Management
+                </h3>
+
+            </div>
+
+
+            <div class="interest reveal">
+
+                <div class="interest-number">
+                    02
+                </div>
+
+                <h3>
+                    Accounting & Finance
+                </h3>
+
+            </div>
+
+
+            <div class="interest reveal">
+
+                <div class="interest-number">
+                    03
+                </div>
+
+                <h3>
+                    Economics
+                </h3>
+
+            </div>
+
+
+            <div class="interest reveal">
+
+                <div class="interest-number">
+                    04
+                </div>
+
+                <h3>
+                    Entrepreneurship
+                </h3>
+
+            </div>
+
+
+            <div class="interest reveal">
+
+                <div class="interest-number">
+                    05
+                </div>
+
+                <h3>
+                    Marketing
+                </h3>
+
+            </div>
+
+
+            <div class="interest reveal">
+
+                <div class="interest-number">
+                    06
+                </div>
+
+                <h3>
+                    Business Communication
+                </h3>
+
+            </div>
+
+
+            <div class="interest reveal">
+
+                <div class="interest-number">
+                    07
+                </div>
+
+                <h3>
+                    Leadership & Teamwork
+                </h3>
+
+            </div>
+
+
+            <div class="interest reveal">
+
+                <div class="interest-number">
+                    08
+                </div>
+
+                <h3>
+                    Business Development
+                </h3>
+
+            </div>
+
+
+            <div class="interest reveal">
+
+                <div class="interest-number">
+                    09
+                </div>
+
+                <h3>
+                    Financial Management
+                </h3>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     SKILLS
+======================================== -->
+
+<section id="skills">
+
+    <div class="container">
+
+
+        <div class="section-number">
+            04 — SKILLS
+        </div>
+
+
+        <h2 class="section-title">
+            Knowledge & Focus
+        </h2>
+
+
+        <p class="section-description">
+
+            Areas I am actively developing through education,
+            practice and continuous learning.
+
+        </p>
+
+
+
+        <div class="skill-grid">
+
+
+            <div class="skill reveal">
+
+                <div class="skill-top">
+
+                    <span>
+                        Business Management
+                    </span>
+
+                    <span>
+                        80%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        data-width="80%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="skill reveal">
+
+                <div class="skill-top">
+
+                    <span>
+                        Accounting & Finance
+                    </span>
+
+                    <span>
+                        78%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        data-width="78%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="skill reveal">
+
+                <div class="skill-top">
+
+                    <span>
+                        Economics
+                    </span>
+
+                    <span>
+                        75%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        data-width="75%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="skill reveal">
+
+                <div class="skill-top">
+
+                    <span>
+                        Business Communication
+                    </span>
+
+                    <span>
+                        72%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        data-width="72%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="skill reveal">
+
+                <div class="skill-top">
+
+                    <span>
+                        Entrepreneurship
+                    </span>
+
+                    <span>
+                        70%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        data-width="70%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="skill reveal">
+
+                <div class="skill-top">
+
+                    <span>
+                        Leadership & Teamwork
+                    </span>
+
+                    <span>
+                        70%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div
+                        class="skill-progress"
+                        data-width="70%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     GOALS
+======================================== -->
+
+<section class="goals" id="goals">
+
+    <div class="container">
+
+
+        <div class="section-number">
+            05 — GOALS
+        </div>
+
+
+        <h2 class="section-title">
+            Where I'm Going
+        </h2>
+
+
+        <p class="section-description">
+
+            My goal is to gain deep and practical knowledge
+            in business and management and understand how
+            academic concepts are applied in the real
+            business world.
+
+        </p>
+
+
+
+        <div class="goal-grid">
+
+
+            <div class="goal reveal">
+
+                <strong>01</strong>
+
+                Develop strong management and
+                leadership skills.
+
+            </div>
+
+
+            <div class="goal reveal">
+
+                <strong>02</strong>
+
+                Improve my knowledge of accounting
+                and finance.
+
+            </div>
+
+
+            <div class="goal reveal">
+
+                <strong>03</strong>
+
+                Learn about entrepreneurship and
+                business strategy.
+
+            </div>
+
+
+            <div class="goal reveal">
+
+                <strong>04</strong>
+
+                Develop effective communication and
+                presentation skills.
+
+            </div>
+
+
+            <div class="goal reveal">
+
+                <strong>05</strong>
+
+                Gain practical experience through
+                projects and real-world learning.
+
+            </div>
+
+
+            <div class="goal reveal">
+
+                <strong>06</strong>
+
+                Continue my higher education in a
+                management-related field.
+
+            </div>
+
+
+            <div class="goal reveal">
+
+                <strong>07</strong>
+
+                Build a successful and responsible
+                professional career.
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     STRENGTHS
+======================================== -->
+
+<section id="strengths">
+
+    <div class="container">
+
+
+        <div class="section-number">
+            06 — STRENGTHS
+        </div>
+
+
+        <h2 class="section-title">
+            What Drives Me
+        </h2>
+
+
+        <div class="strength-grid">
+
+
+            <div class="strength reveal">
+
+                <h3>
+                    Continuous Learning
+                </h3>
+
+                <p>
+
+                    I am interested in learning new
+                    concepts and improving my knowledge.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="strength reveal">
+
+                <h3>
+                    Management Mindset
+                </h3>
+
+                <p>
+
+                    My commerce and management background
+                    has developed my interest in how people,
+                    resources and businesses are managed.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="strength reveal">
+
+                <h3>
+                    Adaptability
+                </h3>
+
+                <p>
+
+                    I am willing to learn from new
+                    experiences and adapt to different
+                    situations.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="strength reveal">
+
+                <h3>
+                    Career Motivation
+                </h3>
+
+                <p>
+
+                    I am focused on building my knowledge
+                    and skills for my future career.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="strength reveal">
+
+                <h3>
+                    Problem Solving
+                </h3>
+
+                <p>
+
+                    I want to develop the ability to
+                    understand problems and find
+                    practical solutions.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     VISION
+======================================== -->
+
+<section id="vision">
+
+    <div class="container">
+
+
+        <div class="section-number">
+            07 — VISION
+        </div>
+
+
+        <h2 class="section-title">
+            My Vision
+        </h2>
+
+
+        <div class="vision reveal">
+
+
+            <p class="vision-text">
+
+                My vision is to become a knowledgeable,
+                skilled, and responsible professional in
+                the field of business and management.
+
+            </p>
+
+
+            <br>
+
+
+            <p class="vision-text">
+
+                I want to continuously improve myself
+                through education, practical experience,
+                and lifelong learning.
+
+            </p>
+
+
+            <br>
+
+
+            <p class="vision-text">
+
+                I believe that deep education, practical
+                knowledge, discipline, and continuous
+                self-development are the foundations
+                for achieving long-term success.
+
+            </p>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     PERSONAL STATEMENT
+======================================== -->
+
+<section class="statement">
+
+    <div class="container">
+
+
+        <div class="section-number">
+            08 — PERSONAL STATEMENT
+        </div>
+
+
+        <div class="quote reveal">
+
+            “Education is not just about completing
+            grades or earning certificates. For me,
+            true education means understanding what
+            I learn, applying that knowledge in real
+            life, and continuously developing myself.”
+
+        </div>
+
+
+        <div class="quote-author">
+
+            — Siddhartha Chaulagain
+
+        </div>
+
+
+        <p
+            style="
+                max-width:800px;
+                margin:35px auto 0;
+                color:#777;
+            "
+        >
+
+            I am currently at the beginning of my
+            professional journey, and I look forward
+            to gaining new experiences, exploring
+            opportunities, and building a strong future
+            in the field of Commerce and Management.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     CONTACT
+======================================== -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+
+        <div class="contact-content reveal">
+
+
+            <div class="section-number">
+                09 — CONTACT
+            </div>
+
+
+            <h2 class="section-title">
+                Let's Connect.
+            </h2>
+
+
+            <p>
+
+                I am open to learning, exploring new
+                opportunities, gaining practical experience,
+                and connecting with people interested in
+                business and management.
+
+            </p>
+
+
+            <!-- NO LINKEDIN -->
+
+            <div class="socials">
+
+
+                <a
+                    href="https://www.instagram.com/_siddhartha00000007?stkn=MTY2ZG9oZWV3dTYyOQ=="
+                    class="social"
+                >
+                    Instagram
+                </a>
+
+
+                <a
+                    href="https://www.facebook.com/Chaulagain.Siddhartha.77"
+                    class="social"
+                >
+                    Facebook
+                </a>
+
+
+                <a
+                    href="mailto:siddhartha.chaulagain007@gmail.com"
+                    class="social"
+                >
+                    Email
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     FOOTER
+======================================== -->
+
+<footer>
+
+    © 2026 Siddhartha Chaulagain
+    · Commerce & Management
+
+</footer>
+
+
+
+<!-- ========================================
+     JAVASCRIPT
+======================================== -->
+
+<script>
+
+
+/* ========================================
+   MOBILE MENU
+======================================== */
+
+function toggleMenu() {
+
+    const nav =
+        document.querySelector(".nav-links");
+
+    if (nav.style.display === "flex") {
+
+        nav.style.display = "none";
+
+    } else {
+
+        nav.style.display = "flex";
+
+        nav.style.flexDirection = "column";
+
+        nav.style.position = "absolute";
+
+        nav.style.top = "70px";
+
+        nav.style.right = "6%";
+
+        nav.style.padding = "25px";
+
+        nav.style.background = "#111";
+
+        nav.style.border =
+            "1px solid rgba(255,255,255,.12)";
+
+    }
+
+}
+
+
+/* ========================================
+   SCROLL REVEAL
+======================================== */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const revealObserver =
+    new IntersectionObserver(
+
+        (entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("active");
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.12
+        }
+
+    );
+
+
+revealElements.forEach(element => {
+
+    revealObserver.observe(element);
+
+});
+
+
+
+/* ========================================
+   SKILL BAR ANIMATION
+======================================== */
+
+const skillBars =
+    document.querySelectorAll(".skill-progress");
+
+
+const skillObserver =
+    new IntersectionObserver(
+
+        (entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    const width =
+                        entry.target.getAttribute(
+                            "data-width"
+                        );
+
+                    entry.target.style.width = width;
+
+                    skillObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.5
+        }
+
+    );
+
+
+skillBars.forEach(bar => {
+
+    skillObserver.observe(bar);
+
+});
+
+
+
+/* ========================================
+   CLOSE MOBILE MENU
+======================================== */
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            () => {
+
+                if (window.innerWidth <= 950) {
+
+                    document.querySelector(
+                        ".nav-links"
+                    ).style.display = "none";
+
+                }
+
+            }
+        );
+
+    });
+
+</script>
+
+
+</body>
+</html>
